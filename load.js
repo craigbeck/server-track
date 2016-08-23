@@ -3,12 +3,8 @@ var axios = require('axios');
 
 const args = process.argv.slice(2);
 
-var count;
-try {
-  count = parseInt(args[0], 10);
-} catch (e) {
-  // ignore not an int
-}
+var count = parseInt(args[0], 10);
+
 if (isNaN(count)) {
   count = 12;
 }
@@ -22,10 +18,6 @@ for (var i = 0; i < count; i++) {
   var delay = Math.floor(Math.random() * 10000);
   servers.push(new Generator(name, delay));
 }
-
-// process.on('exit', () => {
-//   servers.forEach(generator => generator.cancel());
-// });
 
 function Generator(name, delay) {
   this.tid = null

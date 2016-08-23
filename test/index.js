@@ -66,8 +66,6 @@ describe('Store', function () {
         store.getStats('foobar')
           .then(actual => {
             expect(actual).to.have.property('cpuAverage');
-            console.log(actual.cpuAverage.byHour);
-            console.log(store.data['foobar'])
             expect(actual.cpuAverage.byHour).to.have.length(24);
             expect(actual.cpuAverage.byHour[0]).to.have.property('value', null);
             expect(actual.cpuAverage.byHour[22]).to.have.property('value', 0.40);

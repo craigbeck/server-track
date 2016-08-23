@@ -30,6 +30,28 @@ describe('service endpoints', () => {
     });
   });
 
+  describe('GET  /server', () => {
+
+    it('should respond with list of servers', done => {
+
+      const req = {
+        method: 'GET',
+        url: '/server'
+      };
+
+      server.inject(req, response => {
+
+        expect(response.statusCode).to.equal(200);
+        expect(response.result)
+          .to.have.property('servers')
+          .to.have.length(1);
+        expect(response.result.servers[0])
+          .to.have.property('name', 'foobar')
+        done();
+      });
+    });
+  });
+
   describe('GET  /server/{id}', () => {
 
     it('should respond with not found for unknown server id', done => {

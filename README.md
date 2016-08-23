@@ -26,7 +26,6 @@ Response:
 }
 ```
 
-
 ### `GET  /server/{name}`
 
 Returns the server's CPU and RAM load averaged by the minute for the past hour and by the hour for the past 24 hours.
@@ -125,7 +124,7 @@ Requires > Node v6.0
 Getting started:
 
 ```
-$ git clone
+$ git clone https://github.com/craigbeck/server-track.git
 $ cd server-track
 $ npm install
 ```
@@ -145,3 +144,5 @@ $ npm test
 ```
 
 or use `npm run watch-test` to watch the source an run tests when source changes are saved.
+
+There is a helper script `load.js` that can be used to simulate a number of servers posting (random) data to the service. Usage: `node load.js <number of servers>`

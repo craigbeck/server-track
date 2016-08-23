@@ -1,5 +1,4 @@
 const expect = require('chai').expect;
-
 const Store = require('../lib/store');
 
 /*
@@ -16,7 +15,7 @@ This should return data (if it has any) for the given server:
   • A list of the average load values for the last 24 hours broken down by hour
 */
 
-describe('Store', function () {
+describe('Store', () => {
 
   var store = undefined;
 
